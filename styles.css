@@ -1,0 +1,255 @@
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Libre+Baskerville&family=Roboto&family=Roboto+Mono&family=Yeon+Sung&display=swap');
+
+:root{
+    --background-primary:rgb(4, 0, 27);
+    --background-secondary:rgb(192, 216, 214);
+    --text-color1:white;
+    --text-color2:black;
+    --third-color:rgba(47, 83, 243, 0.932);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Roboto,Libre Baskerville;
+    scroll-behavior: smooth;
+}
+.dark-mode{
+    --text-color1:black;
+    --background-primary:rgb(192, 216, 214);
+}
+body{
+    overflow-x:hidden;
+    background-color: var(--background-primary);
+}
+
+/* #followingCursor{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    background-color: var(--text-color1);
+    filter: blur(30px);
+    opacity: 1;
+    box-shadow: 50px 100px 180px var(--text-color1);
+    transition: transform 50ms ease-in;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+} */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--background-primary);
+    color: var(--text-color1);
+    border-bottom: 1px solid var(--text-color1);
+    padding-top: 15px;
+}
+header .sidebar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 75vw;
+}
+header .sidebar li{
+    list-style: none;
+}
+header .sidebar li a{
+    text-decoration: none;
+    color: var(--text-color1);
+    font-size: 1.1rem;
+    transition: all 300ms ease-in;
+}
+header .sidebar li a:hover{
+    color: var(--third-color);
+}
+.logo{
+    margin-left:10px;
+}
+
+/* ========== MAIN PAGE ========= */
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-primary);
+    display: flex;
+    align-items: center;
+    color: var(--text-color1);
+}
+.text-content{
+    /* border: 2px solid red; */
+    max-width: 55vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+}
+.text-content p{
+    /* border: 1px solid red; */
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+}
+.name{
+    font-family: 'Roboto Moni';
+    font-size: 2.5rem;
+}
+.tag{
+    color: var(--third-color);
+    font-family: 'Yeon Sung';
+}
+.image-content{
+    /* border: 2px solid red; */
+    max-width: 45vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.image-content img{
+    width: 35vw;
+    margin-left: 50px;
+    pointer-events: none;
+}
+.projects {
+    color: white;
+    text-align: center;
+}
+.footer{
+    width: 100%;
+    height: 80px;
+    background-color: chartreuse;
+    text-align: center;
+    padding-top: 6px;
+    position: fixed;
+    bottom: 0;
+    color: black;
+}
+/* ====== Media Queries ======*/
+
+
+@media (max-width: 680px){
+    header{
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--background-primary);
+        height: 70px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid var(--text-color1);
+        padding: 5px;
+    }
+    .logo{
+        margin:10px 0 0 10px;
+        color: var(--text-color1);
+        pointer-events: none;
+    }
+    header .sidebar{
+        display: block;
+        border-left: 2px solid var(--text-color1);
+        width: 230px;
+        height: 100vh;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: -230px;
+        background-color: var(--background-primary);
+    }
+    header nav ul li{
+        padding: 25px 0;
+        font-size: 1.3rem;
+        border-bottom: 2px solid var(--text-color1);
+        list-style: none;
+        transition: transform 300ms ease-in,
+        background 300ms ease-in;
+
+    }
+    header nav ul li:hover{
+        transform: translateX(6px);
+        background-color: rgba(121, 138, 240, 0.349);
+    }
+    header nav ul li a{
+        text-decoration: none;
+        color: var(--text-color1);
+        cursor: pointer;
+        padding: 0px 10px;
+    }
+    header nav ul.active {
+        right: 0;
+    }
+    .menu-toggle{
+        height: 45px;
+        width: 45px;
+        /* background-color: aqua; */
+        position: absolute;
+        top: 0;
+        left:-60px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .menu-toggle span{
+        width: 100%;
+        height: 5px;
+        background-color: var(--text-color1);
+        border-radius: 14px;
+        position: absolute;
+        top: 0;
+    }
+    .menu-toggle span:nth-child(1){
+        top: 10%;
+    }
+    .menu-toggle span:nth-child(2){
+        top: 50%;
+    }
+    .menu-toggle span:nth-child(3){
+        top: 90%;
+    }
+    header .sidebar.active .menu-toggle span:nth-child(1){
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+    header .sidebar.active .menu-toggle span:nth-child(2){
+        display: none;
+    }
+    header .sidebar.active .menu-toggle span:nth-child(3){
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    .form-check{
+        margin-top: 30px;
+    }
+    #switch{
+        cursor: pointer;
+    }
+    .main-container {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+    .text-content {
+        min-width: 100%;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+    .image-content {
+        width: 100vw;
+        margin: 0;
+    }
+    .projects {
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--background-primary);
+    }
+}
