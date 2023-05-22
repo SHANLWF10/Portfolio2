@@ -130,7 +130,7 @@ header .sidebar li a:hover{
     background-color: chartreuse;
     text-align: center;
     padding-top: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 16px;
     position: fixed;
     bottom: 0;
     color: black;
