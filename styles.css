@@ -129,7 +129,8 @@ header .sidebar li a:hover{
     height: 80px;
     background-color: chartreuse;
     text-align: center;
-    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
     position: fixed;
     bottom: 0;
     color: black;
