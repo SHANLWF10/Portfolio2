@@ -18,6 +18,9 @@
     --text-color1:black;
     --background-primary:rgb(192, 216, 214);
 }
+.dark-mode:hover{
+  cursor:pointer;
+}
 body{
     overflow-x:hidden;
     background-color: var(--background-primary);
